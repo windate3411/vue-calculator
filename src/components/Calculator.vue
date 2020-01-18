@@ -19,7 +19,7 @@
       <div class="btn" @click="append('3')">3</div>
       <div class="btn operator" @click="plus">+</div>
       <div class="btn zero" @click="append('0')">0</div>
-      <div class="btn">.</div>
+      <div class="btn" @click="dot">.</div>
       <div class="btn operator" @click="equal">=</div>
     </div>
   </div>
@@ -83,8 +83,8 @@ export default {
     },
     equal() {
       this.current = `${this.operator(
-        parseInt(this.current),
-        parseInt(this.previous)
+        parseFloat(this.current),
+        parseFloat(this.previous)
       )}`;
       this.operator = null;
       this.operatorClicked = false;
@@ -100,6 +100,11 @@ export default {
     divide() {
       this.operator = (a, b) => a / b;
       this.setPrevious();
+    },
+    dot() {
+      if (this.current.indexOf(".") === -1) {
+        this.append(".");
+      }
     }
   }
 };
