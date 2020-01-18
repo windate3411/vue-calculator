@@ -1,5 +1,11 @@
 # calculator
 
+## Description
+30Days challenge-4. A simple calculator built on vue-cli!
+
+## Project preview
+![gif](https://github.com/windate3411/vue-calculator/blob/master/GIF.gif)
+
 ## Project setup
 ```
 npm install
@@ -25,5 +31,5 @@ npm run test
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Author
+Danny Wang
