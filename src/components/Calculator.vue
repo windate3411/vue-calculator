@@ -1,7 +1,7 @@
 <template>
   <div class="calculator">
-    <div class="display">123456</div>
-    <div class="btn">C</div>
+    <div class="display">{{result}}</div>
+    <div class="btn" @click="result=0">C</div>
     <div class="btn">+/-</div>
     <div class="btn">%</div>
     <div class="btn operator">/</div>
@@ -25,7 +25,13 @@
 
 <script>
 export default {
-  name: "Calculator"
+  name: "Calculator",
+  data() {
+    return {
+      result: 0
+    };
+  },
+  methods: {}
 };
 </script>
 
@@ -48,6 +54,7 @@ export default {
 .btn {
   border: 1px solid black;
   background-color: #999;
+  cursor: pointer;
 }
 
 .operator {
