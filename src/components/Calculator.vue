@@ -1,9 +1,9 @@
 <template>
   <div class="calculator">
-    <div class="display">{{result}}</div>
+    <div class="display">{{result || '0'}}</div>
     <div class="btn" @click="result=0">C</div>
-    <div class="btn">+/-</div>
-    <div class="btn">%</div>
+    <div class="btn" @click="sign">+/-</div>
+    <div class="btn" @click="percent">%</div>
     <div class="btn operator">/</div>
     <div class="btn">7</div>
     <div class="btn">8</div>
@@ -28,10 +28,20 @@ export default {
   name: "Calculator",
   data() {
     return {
-      result: 0
+      result: "1234"
     };
   },
-  methods: {}
+  methods: {
+    sign() {
+      this.result =
+        this.result.charAt(0) === "-"
+          ? this.result.slice(1)
+          : `-${this.result}`;
+    },
+    percent() {
+      this.result = `${parseFloat(this.result) / 100}`;
+    }
+  }
 };
 </script>
 
